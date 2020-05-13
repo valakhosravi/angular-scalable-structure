@@ -1,1 +1,27 @@
-/* You can add global styles to this file, and also import other style files */
+// Imports
+@import "~bootstrap/dist/css/bootstrap.min.css";
+
+// General
+@font-face {
+  font-family: 'YekanBakh';
+  src: url("/assets/font/Yekan.ttf") format("truetype");
+}
+
+// styles
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  font-family: 'YekanBakh';
+}
+
+.rtl {
+  direction: rtl !important;
+}
+
+.eng {
+  font-family: Arial, Helvetica, sans-serif;
+}

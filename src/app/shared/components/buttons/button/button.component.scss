@@ -1,0 +1,31 @@
+.tm-btn {
+  background: linear-gradient(90deg, rgba(248, 135, 192, 1) 0%, rgba(244, 50, 118, 1) 50%, rgba(244, 50, 118, 1) 100%);
+  border-radius: 100px;
+  border: 3px solid rgba(244, 50, 118, 1);
+  color: #fff;
+  font-size: 1.25rem;
+  font-weight: 600;
+  height: 52px;
+  line-height: 1.5;
+  outline: 0;
+  padding: .5rem 1rem;
+  text-align: center;
+  transition: .2s linear;
+  width: 100%;
+
+  &.secondary {
+    background: none;
+    background-color: #fff;
+    border-color: rgba(244, 50, 118, 1);
+    color: rgba(244, 50, 118, 1);
+  }
+
+  &:hover {
+    transform: scale(1.02);
+  }
+
+  &:active {
+    opacity: 90%;
+    transform: scale(.98);
+  }
+}

@@ -1,0 +1,133 @@
+#ngx_charts_pie_chart {
+  position: absolute;
+  transform: rotate(15deg);
+  z-index: 2;
+}
+
+#ngx_charts_pie_chart-background {
+  opacity: 0.6;
+  position: absolute;
+  transform: rotate(0deg);
+  z-index: 1;
+}
+
+#tm-spin_wheel-container {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.tm-logo-container {
+  -moz-box-shadow: 0 0 16px 8px;
+  -webkit-box-shadow: 0 0 16px 8px;
+  border-radius: 1000px;
+  border: 10px solid #F3F3F3;
+  box-shadow: 0 0 8px 4px rgba($color: #000000, $alpha: 0.5);
+  left: 0;
+  margin: 0 auto;
+  overflow: hidden;
+  position: absolute;
+  position: absolute;
+  right: 0;
+  width: 40%;
+  z-index: 4;
+
+  img.tm-logo-image {
+    width: 100%;
+  }
+
+  &.desktop {
+    width: 30%;
+    top: calc(50vh - 15%);
+  }
+}
+
+.tm-labels-container {
+  width: 100%;
+}
+
+.tm-spin_wheel_label {
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  color: #fff;
+  direction: rtl;
+  font-size: 14px;
+  height: 40px;
+  line-height: 40px;
+  padding-left: 1rem;
+  padding-right: 2rem;
+  position: absolute;
+  text-align: right;
+  top: calc(50% - 20px);
+  transform: translate(-50%, -50%);
+  width: 500px;
+  z-index: 3;
+}
+
+.tm-spin_wheel_labels-wrapper {
+  margin-left: -20%;
+  position: absolute;
+  z-index: 3;
+
+  &.desktop {
+    margin-left: 0;
+  }
+}
+
+.tm-wheel_knob-container {
+  margin-top: -60px;
+
+  img.tm-wheel_knob {
+    width: 40px;
+    z-index: 3;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  img.tm-wheel_knob.shaking {
+    animation: shake 1s ease-in-out infinite;
+  }
+
+  &.desktop {
+    height: 60px;
+    margin-top: 0;
+    position: absolute;
+    top: calc(50% - 60px);
+    transform: rotate(-45deg);
+    width: 100%;
+    z-index: 4;
+
+    img.tm-wheel_knob {
+      left: calc(100% - 30px);
+      position: absolute;
+      transform: rotate(-90deg);
+      width: 60px;
+    }
+  }
+}
+
+@keyframes shake {
+
+  10%,
+  90% {
+    transform: translateX(-50%) rotate(-10deg);
+  }
+
+  20%,
+  80% {
+    transform: translateX(-50%) rotate(0deg);
+  }
+
+  30%,
+  50%,
+  70% {
+    transform: translateX(-50%) rotate(-15deg);
+  }
+
+  40%,
+  60% {
+    transform: translateX(-50%) rotate(0deg);
+  }
+}

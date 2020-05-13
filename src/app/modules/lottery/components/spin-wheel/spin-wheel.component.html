@@ -1,0 +1,78 @@
+<div *ngIf="view === 'mobile'">
+  <div>
+    <div #spinWheelContainer id="tm-spin_wheel-container" [ngStyle]="{'height': spinWheelContainerHeight + 'px'}">
+      <div id="ngx_charts_pie_chart" [@rotatedState]='{value: state, params: {rotationDegree: rotationDegree}}'
+        [ngStyle]="{'left': leftNagativeMargin + 'px', 'top':topNagativeMargin + 'px'}"
+        *ngIf="isSpinWheelContainerWidthCalculated">
+        <ngx-charts-pie-chart [tooltipDisabled]="true" [view]="[spinWheelWidth, spinWheelWidth]" [animations]="false"
+          [scheme]="colorScheme" [results]="awardList">
+        </ngx-charts-pie-chart>
+      </div>
+      <div id="ngx_charts_pie_chart-background"
+        [@rotatedState]='{value: state, params: {rotationDegree: rotationDegree}}'
+        [ngStyle]="{'left': leftNagativeMargin - 15 + 'px', 'top':topNagativeMargin - 15 + 'px'}"
+        *ngIf="isSpinWheelContainerWidthCalculated">
+        <ngx-charts-pie-chart [tooltipDisabled]="true" [view]="[spinWheelWidth + 30, spinWheelWidth + 30]"
+          [animations]="false" [scheme]="colorScheme" [results]="awardList">
+        </ngx-charts-pie-chart>
+      </div>
+      <div class="tm-logo-container">
+        <img alt="logo" class="tm-logo-image"
+          src="https://lh3.googleusercontent.com/aEFDHK866p7AZUL2pEhRjSfMU6pENdPNRUxKz6cf4mKsk7M2THGRAY9RF_Cbt9mmHwY=s360-rw">
+      </div>
+      <div class="tm-spin_wheel_labels-container" style="width: 100%;">
+        <div class="tm-spin_wheel_labels-wrapper"
+          [@rotatedState]='{value: state, params: {rotationDegree: rotationDegree}}'
+          [ngStyle]="{'width': spinWheelWidth + 'px', 'height': spinWheelWidth + 'px', 'top':topNagativeMargin + 'px'}">
+          <div class="tm-spin_wheel_label" *ngFor="let award of awardList; let i = index"
+            [ngStyle]="{'width': spinWheelWidth + 'px', 'transform': 'rotate(' + (i * (360 / awardList.length) - 15) + 'deg)'}">
+            {{award.label}}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="text-center tm-wheel_knob-container">
+      <img alt="wheel knob" class="tm-wheel_knob" [ngClass]="{'shaking': isWheelKnobShaking}"
+        src="/assets/img/wheel-knob.svg">
+    </div>
+  </div>
+  <div style="height: 60px;"></div>
+</div>
+
+<div *ngIf="view === 'desktop'">
+  <div #spinWheelContainer id="tm-spin_wheel-container" [ngStyle]="{'height': spinWheelContainerHeight + 'px'}">
+    <div id="ngx_charts_pie_chart" [@rotatedStateDesktop]='{value: state, params: {rotationDegree: rotationDegree}}'
+      [ngStyle]="{'left': leftNagativeMargin + 'px', 'top':topNagativeMargin + 'px'}"
+      *ngIf="isSpinWheelContainerWidthCalculated">
+      <ngx-charts-pie-chart [tooltipDisabled]="true" [view]="[spinWheelWidth, spinWheelWidth]" [animations]="false"
+        [scheme]="colorScheme" [results]="awardList">
+      </ngx-charts-pie-chart>
+    </div>
+    <div id="ngx_charts_pie_chart-background"
+      [@rotatedStateDesktop]='{value: state, params: {rotationDegree: rotationDegree}}'
+      [ngStyle]="{'left': leftNagativeMargin - 15 + 'px', 'top':topNagativeMargin - 15 + 'px'}"
+      *ngIf="isSpinWheelContainerWidthCalculated">
+      <ngx-charts-pie-chart [tooltipDisabled]="true" [view]="[spinWheelWidth + 30, spinWheelWidth + 30]"
+        [animations]="false" [scheme]="colorScheme" [results]="awardList">
+      </ngx-charts-pie-chart>
+    </div>
+    <div class="tm-logo-container desktop">
+      <img alt="logo" class="tm-logo-image"
+        src="https://lh3.googleusercontent.com/aEFDHK866p7AZUL2pEhRjSfMU6pENdPNRUxKz6cf4mKsk7M2THGRAY9RF_Cbt9mmHwY=s360-rw">
+    </div>
+    <div class="tm-spin_wheel_labels-container" style="width: 100%;">
+      <div class="tm-spin_wheel_labels-wrapper desktop"
+        [@rotatedStateDesktop]='{value: state, params: {rotationDegree: rotationDegree}}'
+        [ngStyle]="{'width': spinWheelWidth + 'px', 'height': spinWheelWidth + 'px', 'top':topNagativeMargin + 'px'}">
+        <div class="tm-spin_wheel_label" *ngFor="let award of awardList; let i = index"
+          [ngStyle]="{'width': spinWheelWidth + 'px', 'transform': 'rotate(' + (i * (360 / awardList.length) - 15) + 'deg)'}">
+          {{award.label}}
+        </div>
+      </div>
+    </div>
+    <div class="tm-wheel_knob-container desktop">
+      <img alt="wheel knob" class="tm-wheel_knob" [ngClass]="{'shaking': isWheelKnobShaking}"
+        src="/assets/img/wheel-knob.svg">
+    </div>
+  </div>
+</div>

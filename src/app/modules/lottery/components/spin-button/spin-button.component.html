@@ -1,0 +1,10 @@
+<div class="tm-btn tm-spin_button position-relative" [ngClass]="{'loading': isLoading, 'ready': isReady}" (click)="onClick()">
+  <ng-content *ngIf="!isLoading"></ng-content>
+  <span [hidden]="!isLoading">
+    <img src="/assets/img/loading.svg" alt="loading" class="tm-loading">
+  </span>
+  <span class="tm-btn tm-input_button" *ngIf="isReady">
+    کپی
+  </span>
+  <input class="tm-input eng" type="text" value="t0Mib@Ri" *ngIf="isReady" readonly>
+</div>

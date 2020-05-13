@@ -1,0 +1,76 @@
+<div class="tm-landing_page-container" *ngIf="isMobileResolution">
+  <app-spin-wheel [spiningDegree]="degree" view="mobile"></app-spin-wheel>
+  <div class="px-4 py-3">
+    <p class="text-right rtl">
+      شما در مسابقه
+      <span style="color: black;font-weight: 800;">
+        اسنپ
+      </span>
+      شرکت کردید
+      <br>
+      برای امتحان کردن شانس خود دکمه زیر را فشار دهید.
+    </p>
+    <div class="text-center mb-3">
+      <app-spin-button (click)="onStartClick()">
+        شروع
+      </app-spin-button>
+    </div>
+    <div class="text-center mb-4">
+      <app-button *ngIf="isSpinWheelSpinningEnded">
+        استفاده از جایزه
+      </app-button>
+      <div style="height: 52px;" *ngIf="!isSpinWheelSpinningEnded">
+
+      </div>
+    </div>
+    <div class="text-center">
+      <img class="tm-logo" src="/assets/img/logo.svg" alt="">
+      <p class="rtl">
+        این قرعه کشی توسط
+        <a class="tm-link">تومی‌بری</a>
+        به شما تقدیم شد.
+      </p>
+    </div>
+  </div>
+</div>
+<div class="container-fluid tm-landing_page-desktop_container" *ngIf="!isMobileResolution">
+  <div class="row">
+    <div class="col col-7">
+      <app-spin-wheel [spiningDegree]="degree" view="desktop"></app-spin-wheel>
+    </div>
+    <div class="col col-5" style="display: flex; align-items: center;">
+      <div class="w-100 px-4">
+        <p class="text-right rtl h4 mb-3">
+          شما در مسابقه
+          <span style="color: black;font-weight: 800;">
+            اسنپ
+          </span>
+          شرکت کردید
+          <br>
+          برای امتحان کردن شانس خود دکمه زیر را فشار دهید.
+        </p>
+        <div class="text-center mb-3">
+          <app-spin-button (click)="onStartClick()">
+            شروع
+          </app-spin-button>
+        </div>
+        <div class="text-center mb-4">
+          <app-button *ngIf="isSpinWheelSpinningEnded">
+            استفاده از جایزه
+          </app-button>
+          <div style="height: 52px;" *ngIf="!isSpinWheelSpinningEnded">
+
+          </div>
+        </div>
+        <div class="text-right">
+          <img class="tm-logo" src="/assets/img/logo.svg" alt="">
+          <p class="rtl h5">
+            این قرعه کشی توسط
+            <a class="tm-link">تومی‌بری</a>
+            به شما تقدیم شد.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
